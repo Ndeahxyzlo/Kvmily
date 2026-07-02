@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" data-font="medium">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>365 Razones · Kvmily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="razones.css">
+</head>
+<body>
+
+<canvas id="starfield"></canvas>
+<canvas id="fx-canvas"></canvas>
+
+<audio id="audio-el" preload="metadata"></audio>
+
+<!-- Music Player -->
+<div id="music-player" class="music-player">
+  <button id="music-toggle" class="music-toggle" title="Música">♪</button>
+  <div id="music-panel" class="music-panel">
+    <div class="music-info">
+      <div id="music-title" class="music-title">Sin canciones</div>
+      <div id="music-artist" class="music-artist">Agrega canciones en razones.js</div>
+    </div>
+    <div class="music-progress">
+      <div id="music-rail" class="music-rail">
+        <div id="music-fill" class="music-fill"></div>
+      </div>
+      <div class="music-times">
+        <span id="music-current">0:00</span>
+        <span id="music-total">0:00</span>
+      </div>
+    </div>
+    <div class="music-controls">
+      <button id="music-prev" class="music-btn">⏮</button>
+      <button id="music-play" class="music-btn music-btn-main">▶</button>
+      <button id="music-next" class="music-btn">⏭</button>
+    </div>
+    <div class="music-volume">
+      <span class="vol-icon">🔉</span>
+      <input id="music-vol" type="range" min="0" max="1" step="0.01" value="0.7" class="vol-slider">
+    </div>
+  </div>
+</div>
+
+<!-- Settings -->
+<button id="settings-btn" class="settings-btn" title="Ajustes">⚙</button>
+<div id="settings-panel" class="settings-panel">
+  <div class="settings-title">Ajustes</div>
+  <div class="settings-row">
+    <span class="settings-label">Tema</span>
+    <button id="theme-toggle" class="settings-chip">🌙 Oscuro</button>
+  </div>
+  <div class="settings-row">
+    <span class="settings-label">Fuente</span>
+    <div class="settings-chips">
+      <button class="settings-chip font-chip" data-font="small">A-</button>
+      <button class="settings-chip font-chip is-active" data-font="medium">A</button>
+      <button class="settings-chip font-chip" data-font="large">A+</button>
+    </div>
+  </div>
+  <div class="settings-row">
+    <span class="settings-label">Modo</span>
+    <div class="settings-chips">
+      <button class="settings-chip mode-chip is-active" data-mode="free">Libre</button>
+      <button class="settings-chip mode-chip" data-mode="calendar">Calendario</button>
+    </div>
+  </div>
+  <div class="settings-row">
+    <span class="settings-label">Ambiente</span>
+    <select id="ambient-select" class="settings-select">
+      <option value="">Sin sonido</option>
+      <option value="rain">Lluvia</option>
+      <option value="forest">Bosque</option>
+      <option value="cafe">Café</option>
+      <option value="sea">Mar</option>
+    </select>
+  </div>
+</div>
+
+<!-- Search Overlay -->
+<div id="search-overlay" class="search-overlay">
+  <div class="search-box">
+    <input id="search-input" class="search-input" type="text" placeholder="Buscar razones…">
+    <button id="search-close" class="search-close">✕</button>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+<!-- Sticky Header -->
+<header id="prog" class="prog">
+  <div class="prog-label">
+    <span class="prog-heart">♥</span>
+    <b>365 razones</b>
+  </div>
+  <div class="prog-track">
+    <div class="prog-rail"><div class="prog-fill" id="prog-fill"></div></div>
+    <span class="prog-num"><em id="opened-count">0</em> / 365</span>
+  </div>
+  <nav class="prog-nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#cuadricula">Razones</a>
+    <a href="#favoritos">Favoritas</a>
+    <a href="#estadisticas">Stats</a>
+    <a href="#galeria">Galería</a>
+    <a href="#cartas">Cartas</a>
+    <a href="#dedicatorias">Dedicatorias</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section id="inicio" class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Para ti ♥</div>
+    <h1 class="hero-title">
+      <span class="hero-word w1">365</span>
+      <span class="hero-word w2">razones</span>
+      <span class="hero-word w3 accent">por las</span>
+      <span class="hero-word w4 accent">que te amo</span>
+    </h1>
+    <p class="hero-sub" id="hero-sub"></p>
+  </div>
+  <a href="#cuadricula" class="hero-cta">Comenzar a descubrir</a>
+  <div class="hero-cue">↓</div>
+</section>
+
+<!-- Grid Section -->
+<section id="cuadricula" class="grid-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Tu colección</div>
+    <h2 class="section-title">Elige una razón</h2>
+    <p class="section-hint">Toca cualquier tarjeta para abrirla</p>
+  </div>
+  <div class="grid-controls">
+    <button id="search-open-btn" class="grid-search-btn">🔍 Buscar</button>
+    <div class="filter-tabs">
+      <button class="filter-tab is-active" data-filter="all">Todas</button>
+      <button class="filter-tab" data-filter="opened">Abiertas</button>
+      <button class="filter-tab" data-filter="locked">Por abrir</button>
+      <button class="filter-tab" data-filter="favorites">Favoritas</button>
+    </div>
+  </div>
+  <div id="grid" class="grid"></div>
+</section>
+
+<!-- Favorites -->
+<section id="favoritos" class="fav-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Guardadas con amor</div>
+    <h2 class="section-title">Tus favoritas</h2>
+  </div>
+  <div id="fav-grid" class="grid fav-grid"></div>
+  <p id="fav-empty" class="fav-empty">Aún no has marcado ninguna como favorita. Abre una razón y toca el ♥.</p>
+</section>
+
+<!-- Estadísticas -->
+<section id="estadisticas" class="stats-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Tu camino</div>
+    <h2 class="section-title">Estadísticas</h2>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div id="stat-opened" class="stat-value">0</div>
+      <div class="stat-label">Abiertas</div>
+    </div>
+    <div class="stat-card">
+      <div id="stat-pct" class="stat-value">0%</div>
+      <div class="stat-label">Completado</div>
+    </div>
+    <div class="stat-card">
+      <div id="stat-days" class="stat-value">—</div>
+      <div class="stat-label">Días explorando</div>
+    </div>
+    <div class="stat-card">
+      <div id="stat-favs" class="stat-value">0</div>
+      <div class="stat-label">Favoritas</div>
+    </div>
+    <div class="stat-card">
+      <div id="stat-last" class="stat-value">—</div>
+      <div class="stat-label">Última abierta</div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline -->
+<section id="timeline-hist" class="timeline-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Historial</div>
+    <h2 class="section-title">Tu línea del tiempo</h2>
+  </div>
+  <div id="timeline-list" class="timeline-list"></div>
+</section>
+
+<!-- Galería -->
+<section id="galeria" class="gallery-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Momentos</div>
+    <h2 class="section-title">Nuestra galería</h2>
+  </div>
+  <div class="gallery-grid">
+    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
+    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
+    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
+    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
+    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
+    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
+    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
+    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" style="display:none">
+  <button id="lb-close" class="lb-close">✕</button>
+  <button id="lb-prev" class="lb-prev">‹</button>
+  <img id="lb-img" class="lb-img" alt="">
+  <button id="lb-next" class="lb-next">›</button>
+</div>
+
+<!-- Línea de vida -->
+<section id="linea-vida" class="life-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Nuestra historia</div>
+    <h2 class="section-title">Línea de vida</h2>
+  </div>
+  <div id="life-list" class="life-list"></div>
+</section>
+
+<!-- Cartas -->
+<section id="cartas" class="letters-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Palabras escritas</div>
+    <h2 class="section-title">Cartas para ti</h2>
+  </div>
+  <div id="letters-grid" class="letters-grid"></div>
+</section>
+
+<!-- Letter Modal -->
+<div id="letter-modal" class="letter-modal" style="display:none">
+  <div class="letter-paper">
+    <button id="letter-close" class="letter-close">✕</button>
+    <div id="letter-date" class="letter-date"></div>
+    <h3 id="letter-title" class="letter-title"></h3>
+    <div id="letter-body" class="letter-body"></div>
+    <div id="letter-sig" class="letter-sig"></div>
+  </div>
+</div>
+
+<!-- Cápsulas -->
+<section id="capsula" class="capsules-section">
+  <div class="section-head">
+    <div class="section-eyebrow">En el tiempo</div>
+    <h2 class="section-title">Cápsulas del tiempo</h2>
+  </div>
+  <div id="capsules-grid" class="capsules-grid"></div>
+</section>
+
+<!-- Dedicatorias -->
+<section id="dedicatorias" class="ded-section">
+  <div class="section-head">
+    <div class="section-eyebrow">Dedicatorias</div>
+    <h2 class="section-title">Palabras que guardo para ti</h2>
+  </div>
+  <div class="ded-grid">
+    <div class="ded-card" style="--delay:0s">
+      <span class="ded-ornament">✦</span>
+      <span class="ded-for" id="ded-for-0"></span>
+      <h3 class="ded-title" id="ded-title-0"></h3>
+      <p class="ded-body" id="ded-body-0"></p>
+      <span class="ded-sig" id="ded-sig-0"></span>
+    </div>
+    <div class="ded-card" style="--delay:0.15s">
+      <span class="ded-ornament">✦</span>
+      <span class="ded-for" id="ded-for-1"></span>
+      <h3 class="ded-title" id="ded-title-1"></h3>
+      <p class="ded-body" id="ded-body-1"></p>
+      <span class="ded-sig" id="ded-sig-1"></span>
+    </div>
+    <div class="ded-card" style="--delay:0.30s">
+      <span class="ded-ornament">✦</span>
+      <span class="ded-for" id="ded-for-2"></span>
+      <h3 class="ded-title" id="ded-title-2"></h3>
+      <p class="ded-body" id="ded-body-2"></p>
+      <span class="ded-sig" id="ded-sig-2"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Últimas palabras -->
+<section id="ultimo" class="last-section">
+  <div class="last-inner">
+    <div class="last-eyebrow">Últimas palabras</div>
+    <h2 id="last-title" class="last-title"></h2>
+    <div id="last-body" class="last-body"></div>
+    <div class="last-firma">
+      <div class="last-firma-line"></div>
+      <span id="last-firma-name" class="last-firma-name"></span>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="modal-close" id="modal-close" aria-label="Cerrar">✕</button>
+    <div class="modal-counter" id="modal-counter">Razón 1 de 365</div>
+    <div class="modal-body">
+      <div class="modal-img-col">
+        <image-slot
+          id="img-slot-active"
+          shape="rounded"
+          radius="18"
+          placeholder="Arrastra una foto aquí"
+          style="display:block;width:100%;aspect-ratio:4/5;">
+        </image-slot>
+      </div>
+      <div class="modal-txt-col">
+        <div class="modal-label">Razón</div>
+        <div class="modal-num" id="modal-num">001</div>
+        <p class="modal-reason" id="modal-reason"></p>
+        <button id="fav-btn" class="fav-btn" title="Guardar como favorita">♥ Favorita</button>
+        <div class="modal-nav">
+          <button class="btn-nav btn-prev" id="btn-prev">← Anterior</button>
+          <button class="btn-nav btn-next" id="btn-next">Siguiente →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <span>Hecho con ♥ — una razón por cada día del año</span>
+  <div class="footer-actions">
+    <button id="export-btn" class="footer-btn">Exportar progreso</button>
+    <button id="import-btn" class="footer-btn">Importar progreso</button>
+  </div>
+</footer>
+
+<input id="import-input" type="file" accept=".json" style="display:none">
+
+<script src="image-slot.js"></script>
+<script src="razones.js"></script>
+</body>
+</html>
