@@ -6,49 +6,420 @@
    EDITA ESTA SECCIÓN CON TU CONTENIDO
    ══════════════════════════════════════════════ */
 
-const DEDICATORIA = "Guardé un pensamiento para cada día del año. Ábrelos poco a poco, sin prisa, y deja que cada uno te recuerde lo mucho que significas para mí.";
+const DEDICATORIA = "Karen hice esto para que veas un poco del cariño que te tengo haría miles de cosas por ti y esta es una de ellas espero puedas llegar a abrirlas todas y leer el final te quiero mucho y estés haciendo lo que estés haciendo cuídate te adoro niña hermosa";
 
-// 365 reasons (repeated cyclically if fewer provided)
 const REASONS = [
-  "Por la forma en que sonríes cuando crees que nadie te está viendo.",
-  "Porque contigo hasta los días grises se sienten cálidos.",
-  "Por cómo me escuchas, incluso cuando hablo de tonterías.",
-  "Porque tu abrazo se siente como llegar a casa.",
-  "Por la paz que me das con solo tomarme de la mano.",
-  "Porque me haces reír justo cuando más lo necesito.",
-  "Por todos los planes pequeños que se vuelven mis recuerdos favoritos.",
-  "Porque crees en mí incluso cuando yo no lo hago.",
-  "Por la manera en que dices mi nombre.",
-  "Porque contigo el silencio nunca es incómodo.",
-  "Por cada café compartido y cada mañana lenta a tu lado.",
-  "Porque haces que quiera ser una mejor versión de mí.",
-  "Por tu forma de cuidarme en los detalles más pequeños.",
-  "Porque tu felicidad se volvió parte de la mía."
+  "La primera vez que vi tus ojos me enamoré muchísimo fue como ver dos perlas cafés en el mar para alguien que no tenía rumbo",
+  "Hoy no sé cómo te ves pero te juro tus ojos deben estar hermosos y te debes haber vestido igual de lindo así incluso estés en pijama",
+  "tu personalidad es una de las cosas más hermosas que pueden ser descubiertas por otro ser humano y nunca lo olvides",
+  "eres una increíble mujer y espero todo en tu vida se dé como lo planeas",
+  "siento que tu cabello es muy bonito, cuando está a la luz del sol es el triple de hermoso",
+  "tus manitos son muy bonitas y me encanta como se te ven esas manillas no sé su historia pero se te ven lindas",
+  "el 7 es mi número favorito sabes y siento que escribiendo la razón número 7 es que eres una persona con un potencial increíble en todo aspecto y espero lo aproveches",
+  "tus lunares del cachete se parecen a una constelación de un sartén jaja siempre lo pensé nunca lo dije pero te digo que se ven hermosos tus lunares",
+  "El mundo no merece una persona tan hermosa como tú no sabes cuánto aprecié todo el tiempo que me dedicaste",
+  "A mí no me gustan los camarones pero por ti me comería un tazón",
+  "Me gusta cuando te tapas la boca para reírte pero también me enoja no poder ver esa sonrisa hermosa",
+  "Tu cara de concentración como cuando me hacías unboxing de tus cosas eso me encantaba",
+  "Nunca dejes que nadie te diga lo que vales porque créeme que vales mucho para mí y para cualquier cosa en este universo porque eres única y especial y te lo podría demostrar cualquier día",
+  "Me encanta tu honestidad tímida, a veces parece que quieres decir algo y lo sueltas de la nada y otras veces lo haces de manera tímida eso me parece muy tierno",
+  "Me encanta tu gusto musical y me parece que todos deberían apreciarlo sabes porque es increíble",
+  "Esta es personal, nunca dejes que alguien te quiera menos de lo que yo quería quererte y amarte porque no es justo con una persona tan hermosa como tú",
+  "Que me introdujeras al mundo del Starbucks fue raro porque era mi primera vez pero me gustó mucho eso te lo agradezco",
+  "agradezco todo el tiempo que me brindaste escuchándome cuando estaba cansado y todo lo que hiciste por mí",
+  "Me hubiera gustado que si te hubiera llegado ese disco de joji fokin repartidores",
+  "Tu presencia llega a ordenar todo en mi mente cuando me decías una sola palabra y yo creo que no era la única persona que lo piensa así",
+  "tu voz es muy dulce incluso cuando dices hijo de tu puta madre JAJAJAJA.",
+  "Me encanta tu amabilidad con las demás personas y de eso me di cuenta cuando te visité",
+  "Me hubiera encantado más acercarme a ti en todo sentido porque de verdad me atraías",
+  "Nunca había probado un vape esa fue una nueva experiencia y pues simplemente agradezco por lo nuevo, gracias hermosa",
+  "Me encanta como te ves con el cabello recogido, te ves muy hermosa",
+  "cuando te emocionabas por algo y te juro me encantaba escucharte alegrarte era muy bonito",
+  "Me encanta tu carácter es decidido pero gentil, muchas gracias por mostrarme un nuevo lado de mí también",
+  "me gusta también es que eres una persona muy capaz a veces tú misma te pones el problema y tú misma lo resuelves eso me gusta mucho",
+  "Espero este sitio te recuerde que nadie debe quererte menos que esto porque yo no dormí en 3 días haciendo esto y no es para echártelo en cara es simplemente para que sepas que si alguien se quiere esforzar por ti lo va a hacer",
+  "si algún día estás triste y sin rumbo recuerda que siempre contarás conmigo por más lejos que estemos",
+  "Gracias por expandir mi gusto musical me ayudaste a descubrir nuevas cosas que me gustan",
+  "Algún día serás una señora responsable y trabajadora yo lo sé",
+  "Me encanta tu carita hermosa",
+  "Este día espero que tus ojos estén igual de hermosos que siempre y no sé tal vez con el sol se vean 200% más hermosos",
+  "me encantaban tus audios largos eran mis podcast en la noche cuando llegaba de trabajar",
+  "Llenas un cuarto solo con tu presencia y sin hablar te lo juro eres una presencia hermosa",
+  "Tienes un bicep muy fuerte yo creo que de un puñetazo me derribas",
+  "Me encanta tu autenticidad nunca pretendiste ser algo que no eras",
+  "me encanta como juegas eres muy buena jugadora en los juegos además de bonita buena el combo",
+  "No te vi sin maquillaje pero sé que eres igual de hermosa de cualquier manera te lo juro",
+  "Me recordaste lo que era sonreír sin motivo alguno",
+  "me da mucha nostalgia ver tu sonrisa en mi galería porque todavía tengo las fotos que te tomé en el parque y las que te tomé en mi Airbnb",
+  "Eres de esas personas que cuando se van dejan un espacio muy específico que nadie más llena igual",
+  "Me encantaba verte concentrada en algo, como si el mundo entero dejara de existir por un momento",
+  "Eres de esas personas que hacen bien su trabajo aunque nadie esté mirando",
+  "Me encanta que tengas tus propios rituales, esas cosas que solo tú haces de esa manera",
+  "Gracias por las conversaciones de madrugada, esas fueron las más reales",
+  "Tienes una forma de escuchar que hace que uno hable mejor de lo que normalmente habla",
+  "Eres de esas personas que cuando se esfuerzan por algo se nota hasta en los detalles más pequeños",
+  "Tu voz cambia cuando hablas de algo que de verdad te importa y ese cambio es muy bonito",
+  "Gracias por las recomendaciones musicales que terminaron siendo parte de mi vida",
+  "Me gustaba que pudieras estar en silencio sin que se sintiera incómodo",
+  "Me encantaba que pudieras tener una conversación muy seria y luego reírte de algo estúpido en el mismo minuto",
+  "Eres de esas personas que tienen claro lo que no van a permitir y eso es mucho más admirable de lo que parece",
+  "Tienes algo muy especial en la manera de ver las cosas, como si siempre encontraras el ángulo que otros no ven",
+  "Eres bonita de esas maneras que no se pueden explicar solo con palabras físicas",
+  "me falto conocerte mucho pero no me arrepiento del tiempo que hablé contigo",
+  "espero cumplas todas tus expectativas para tu futuro hermosa mujer",
+  "nunca te lo dije pero creo que yo si llegué a amarte más que quererte",
+  "cuando te dije que te adoraba no era mentira",
+  "La palabra adorar me la dijo mi abuelita y créeme que decirte esa palabra para mí tenía mucho significado",
+  "Una niña con tus ojos saldría hermosa y siento que aunque no sea conmigo cualquier cosa que venga de ti saldrá hermosa",
+  "Gracias por los momentos en que me dejabas hablar sin interrumpir aunque tuvieras algo que decir",
+  "Tienes un amor incomparable con la Pecas y sabes eso es muy bonito que seas una mamá tan responsable",
+  "las canciones que te dediqué espero siempre que escuchas un pedacito recuerdes por lo menos lo mucho que te quise",
+  "Conocerte siempre será una de las mejores experiencias que tuve en mi vida por lo maravillosa persona que eres",
+  "Cuando vivamos en Monterrey procuraré hacerte algún detalle todos los días para verte feliz",
+  "Me parece muy bonito la capacidad que tienes para cambiar las cosas tan rápido, como de mal a bien no sé cómo explicar eso tan bonito que tienes",
+  "Eres una gran madre con la Pecas eso me parece muy bonito",
+  "Me gusta mucho cuando usas tu humor a veces te me haces bien chistosa otras me caes mal",
+  "Tus ojos son uno de los encuentros más alegres que he tenido en mi vida",
+  "A veces sueño contigo sobre varias cosas espero se cumplan o por lo menos se te cumplan",
+  "Me encanta tu capacidad para mantenerte serena a veces aunque también me asusta",
+  "Me gusta tu manera de expresarte cuando te gusta algo me parece algo único",
+  "Me encantaron todas tus fotos, cada una la tengo guardada en cada rincón de mi mente",
+  "Me parece eres muy linda esto no tiene explicación simplemente me pareces hermosa",
+  "Sabes el hecho de que estudiaste algo relacionado con sistemas me parece mucha coincidencia para que te hayas encontrado conmigo",
+  "Me parece que eres muy inteligente y capaz de todo",
+  "De corazón deseo que todas tus metas y las mías se cumplan y se puedan alinear para los dos",
+  "Me encantan tus cejas, esto tampoco tiene mucha explicación simplemente me encantan",
+  "Me gustaría vivir cerca de ti juro que nunca te soltaría",
+  "Sé que la distancia es un problema, pero te juro dame tiempo para resolverlo lo más pronto posible y te haré la mujer más feliz del mundo",
+  "Cuando dices que tienes cabeza de manzana me da mucha risa jajaja porque te imagino cabezona JAJAJA",
+  "Me gusta cuando me cuentas tus anécdotas si fueras una estación de radio me gustaría ser tu oyente número uno",
+  "Eras muy tierna de bebé jajaja esa foto que me mandaste me dio muchísima ternura",
+  "Ya vi que eres una señora de manillas, cuando vaya te voy a regalar una",
+  "Me encanta todo de ti",
+  "Eres una persona honesta y eso es difícil de encontrar hoy en día",
+  "Sé que a veces prefieres cerrarte con tus problemas, pero me gustaría ser tu bastón para toda la vida",
+  "Creo que eres una persona muy trabajadora y eso me gusta de ti",
+  "Me gustas",
+  "Pienso en ti mucho, creo que eres mi primer y último pensamiento del día",
+  "Me gustaría conocerte un poco más para no sé tal vez casarme contigo",
+  "Nadie sabe lo que va a pasar mañana, pero sabes siempre te voy a desear lo mejor así en algún punto nuestras historias se separen",
+  "Tu nariz se me hace muy bonita también se me hace única y tierna",
+  "Me gusta cuando te ríes he notado que tienes un ritmo cuando lo haces jajaja",
+  "Cada que escucho a SADE me acuerdo de ti",
+  "Me obsesioné contigo creo que eres lo único que quiero ver y escuchar",
+  "La semana que me dejaste de hablar hace 4 meses me puse a llorar JAJAJA",
+  "Me gusta mucho tu pelo, no tengo una explicación científica, pero me gusta mucho cuando te veo",
+  "Eres una mujer disciplinada y estoy seguro de que vas a alcanzar tus metas si te lo propones",
+  "Me gusta ese brillo que veo en tus ojos",
+  "Mujer siento que eres muy buena cuando empiezas algo tal vez lo bien que mejoras haciéndolo",
+  "Una vez te hice una casa en minecraft que nunca te mostré ahora que recuerdo jajaja",
+  "Tú eres mi inspiración, la razón por la que creo en algo",
+  "Gracias por compartir cosas de tu vida conmigo me parece que es una conexión bonita",
+  "Sigo sin creer lo de tus hermosos ojos en serio son increíbles",
+  "Tus fotos me parecen increíbles y ya lo había dicho pero todas las que tienes subidas a insta me encantan",
+  "Esta es para Pecas como te quiero Pecas espero siempre seas así de feliz y juguetona",
+  "Me parece algo importante ver que tus gustos son muy buenos para todo incluso para los juegos y demás me gusta eso",
+  "Nunca imaginé conectar con una persona tan bonita e inteligente como tú",
+  "me agrada mucho tu inteligencia me parece que tienes conocimientos en muchos temas espero eso te sirva mucho de aquí en adelante",
+  "Tienes unas manos muy lindas tanto que me encantan como se ven en fotos o videollamadas",
+  "me gusta mucho como te ves normalmente cuando me mandas fotos creo que te ves hermosa en cualquier ángulo",
+  "Es bonito ver como planeas tu futuro y tratas de pensar como hacerlo realidad me gustaría acompañarte y ayudarte a construirlo",
+  "Para tu otro cumpleaños tengo una sorpresa grande preparada pero no te voy a decir jajaja",
+  "Es lindo ver que eres reservada pero cuando se investiga o te conocen más eres una persona muy amorosa y linda",
+  "Me parece que tienes buen gusto para las imágenes de discord y xbox las más bonitas es cuando apareces tú toda preciosa en las imágenes",
+  "Me gustaría una hija y sé que contigo saldría perfecta",
+  "Hay días que pienso que hice para merecer a una mujer tan buena como tú en mi vida ¿cómo le hice para invocarte? JAJAJA",
+  "Quiero acabar rápido mis estudios para poder planear como voy a estar contigo en cualquier parte de este planeta como quiero vivir contigo",
+  "No me has mostrado como te ves sin maquillaje pero a mí no me importa porque de seguro te debes ver preciosisima a cualquier hora del día",
+  "Me volvería regio por ti mi amor",
+  "Vi Monterrey por google maps y me imaginé en una casita contigo y una niña con moños y siendo felices porque es lo que quiero",
+  "Te adoro no sabes cuánto me parece que eres una persona que merece todo de mí",
+  "Espero me alcance esta vida para poder darte todo y que seas feliz a mi lado porque lo mereces preciosa",
+  "Para mí la canción que siempre pongo cuando pienso en ti es AMTRAK de Los Retros",
+  "No te dije pero tengo una cuenta con una K en mi gt de xbox es AMXTY K la verdad la hice pensando en ti o bueno le cambié el gt pensando en ti",
+  "¿Cómo puedes iluminar este mundo tan bien con tu presencia donde estés?",
+  "No importa la parte del planeta donde esté siempre voy a querer ir a alcanzarte",
+  "No quiero ser perfecto pero quiero aprender de mis errores para ser perfecto para ti",
+  "Eres un pensamiento recurrente cuando trabajo y más cuando tengo un bulto al hombro porque pienso que este esfuerzo valdrá la pena para estar contigo",
+  "Cuando ejercicio solo pienso en alguien que quiero que tenga los resultados",
+  "Tú y yo y una casa decorada con cosas de hello kitty no sé piénsalo",
+  "Pecas si algún día vivo contigo prometo jugar contigo todos los días no como la aburrida de la karen",
+  "Intento aprender a cocinar para que las tareas del hogar sean del hogar y no de una sola persona",
+  "me gusta tu positivismo incluso cuando nos estamos hundiendo los dos JAJAJA",
+  "Qué bárbaro, ya me pegaste esa frase",
+  "Tu sonrisa preciosa deberían enmarcarla en un museo",
+  "Me gusta el color de cabello aunque parezca un chocoflan como dices tú",
+  "Siento que pelearíamos por qué comprar en un super o tal vez tú mandes en eso",
+  "Me gustan mucho tus manillas creo que pondría una fábrica artesanal para que tengas las que quieras",
+  "Te quiero dar un anillo pero cada que te veo pienso que eres la joya más hermosa que se hizo en este planeta",
+  "Mi mayor deseo en este momento es encontrar la manera de hacerte feliz mujer hermosa",
+  "Cuando escucho una canción de amor te las dedico todas aunque suene un poco mal JAJAJA",
+  "Si me gustó el anime que vimos en la madrugada hasta que me quedé dormido unas dos veces",
+  "Todas las películas de terror me encantaron porque las vi contigo porque nunca las hubiera visto solo por miedo JJAAJAJA",
+  "La primera vez que te vi en un directo me dio risa porque dije que ojalá te quitaran la bocina por las canciones que ponías",
+  "Me gustó cuando te mostré como cocinaba son cosas que nunca le he mostrado a nadie y por eso me encanta",
+  "Nunca he probado un avocado toast pero si estoy contigo me comería hasta un ratón",
+  "En ti veo todo lo que quiero para mi vida y todo lo que se puede construir con una buena persona",
+  "Me hubiera gustado conocerte antes para ir a tu graduación y darte unas flores",
+  "The Marías me gustaba desde antes pero desde que sé que los escuchas me gustó el doble",
+  "Algún día te traeré a Colombia a tratarte como una reina y que conozcas a mi familia",
+  "Quiero formar algo lindo contigo",
+  "no he tocado tus labios pero si me das permiso nunca los voy a soltar",
+  "Tú yo un desayuno en una cafetería y unas fotos",
+  "quiero llenar mi insta con esa carita preciosa",
+  "Si me das permiso te quiero hacer la mujer más feliz del mundo",
+  "siempre te pienso incluso cuando no estoy pensando",
+  "Tus uñas son bonitas",
+  "Cuando me mandaste una foto de tus pies no sé por qué me pareció chistoso pero son bonitos JAJAJA",
+  "Me gustan mucho los gestos de la Pecas se me hacen bonitos",
+  "Quiero enmarcar una foto tuya y ponerla en mi mesa y que solo se vea eso",
+  "Sueño contigo frecuentemente y espero que esos sueños se cumplan",
+  "Sonaré feo pero quiero explorar todo tu cuerpo hermosa mujer",
+  "Gracias por existir no hay nada más",
+  "Agradezco cuando me permististe abrirme contigo",
+  "Gracias por ser tan atenta y buena persona para escucharme cosas que nunca nadie escuchó",
+  "Quiero planear más películas más juegos pero lo que más quiero planear es como me voy a ir contigo",
+  "Siempre que me levanto a trabajar trato de hacerlo contigo en la mente para poder alcanzar mi meta de llegar contigo",
+  "Eres y serás una de las mejores personas que han llegado a mi vida",
+  "No puedo creer que de tanta gente en este planeta yo haya tenido la suerte de encontrar a la más hermosa e inteligente del planeta",
+  "No me importa el resto del mundo si tú estás cómoda y bien",
+  "Siempre pondré tu bienestar por encima del mío porque cuando tú sonríes a mí se me dibuja sola la sonrisa",
+  "Me parece una coincidencia a verte encontrado en uno de mis juegos favoritos siempre voy a agradecer al universo",
+  "Gracias por dejarme ser yo la mayor parte del tiempo eso lo agradezco",
+  "Ya tengamos un bebé te juro lo cuido bien y les doy todo a las dos",
+  "Quiero una casa moderna y que la decores tú",
+  "Me gustaría ir a la playa contigo pero no sé si a ti te gusta la playa con el calor",
+  "Platicar contigo de cualquier cosa es mejor que cualquier otra cosa en este planeta",
+  "Ya quiero ir contigo para dormir juntos todos los días",
+  "quiero despertar y ver esos ojos todos los días",
+  "te quiero conocer también que quiero poder hacer una biografía tuya",
+  "Quisiera compartirme todos mis conocimientos y todo contigo",
+  "Ojalá que los dos encontráramos un trabajo desde casa para poder estar en el mismo lugar siempre",
+  "me aprendería todo lo que te gusta solo para hacer una base de datos",
+  "llegamos a la parte de la web donde te digo que me quiero casar contigo o tal vez más adelante pero igual si quiero",
+  "Yo creo que un beso tuyo curaría todos mis males",
+  "tú y yo uno y unos besos donde quieras piénsalo",
+  "creo que me enamoré de ti perdidamente",
+  "Si hubiéramos crecido en el mismo barrio o escuela yo creo que nos molestaríamos mutuamente muchísimo",
+  "Siento que te conozco de otro lado como si ya te hubiera encontrado muchas veces",
+  "Si hay un plano astral me gustaría controlarlo para encontrarme contigo todos los días",
+  "No creo en el horóscopo pero una vez vi que tú y yo somos un 90% compatibles",
+  "Tú te pones linda y yo te llevo a cualquier lugar de este planeta, igual te llevaría así estés en pijama",
+  "¿Me dejarías cuidarte de por vida?",
+  "¿Me dejarías construir un futuro contigo hasta que estemos felices?",
+  "¿Me dejarías crear una familia perfecta contigo?",
+  "Te extraño aunque hablamos ayer y mucho antes y hoy probablemente y mañana también te extraño todo el tiempo",
+  "Me encantaría llamarte cada 5 minutos solo para decirte que me pareces hermosa y te necesito",
+  "En serio te necesito mucho",
+  "Si hubiéramos nacido cisnes tú y yo estaríamos juntos de por vida",
+  "ahora que me doy cuenta no son 365 razones, son 365 cosas que quiero hacer contigo para amarte toda la vida",
+  "Me gusta la forma en la que hablas de cómo quieres tu futuro pareces comprometida",
+  "Me gusta que cuando estás enojada cambias tu tono de voz y todo",
+  "Todavía recuerdo cuando te enojaste y me ignoraste por una semana damn como me dolió esa semana JAJAJA pero así te adoro muchísimo",
+  "Pecas espero estés bien mi amor todos los días te pienso a ti también",
+  "El futuro es incierto pero espero estar en todo aspecto de tu vida",
+  "Intento aprender día a día sobre ciberseguridad a ver si en el futuro te puedo ayudar y nos podemos ayudar mutuamente",
+  "Intento no sentirme triste cuando no sé de ti pero me encantaría ser enano y que me lleves en un bolsillo contigo a todas partes",
+  "a veces sueño que soy un mono en la montaña con mis amigos en las termales no tiene nada que ver con la lista pero me pareció chistoso",
+  "Nos estamos quedando pelones si tenemos un hijo probablemente nos salga calvo como yo",
+  "Lamento un poco no haber nacido en México así podría estar contigo todo el tiempo",
+  "Respecto a la distancia quiero hacerte una promesa y es que voy a romper ese esquema te juro que seremos felices juntos",
+  "Seguro hueles delicioso",
+  "Siento que tienes la piel muy suave",
+  "Voy a ir a comprobar lo chida que supuestamente eres jajaja o bueno con lo que me dices",
+  "Me gusta saber que haces aunque seas una mujer de negocios ocupada",
+  "te dedicaría cada pieza de piano que hay en este planeta es mi instrumento favorito así como tú eres mi favorita",
+  "había pensado que eres un poco antipática pero me caes muy bien JAJAJA eso suena mal si no lo escribo yo maybe",
+  "Te haría todo un sistema en arduino hasta que alumbren mil bombillas diciendo que te amo",
+  "Me gustas auténticamente",
+  "Siento miedo de perderte, muchísimo miedo de perder a una mujer tan valiosa",
+  "Me gusta tu espalda, no lo había dicho pero siento que debo decirlo antes de verla en vivo y directo",
+  "despiertas algo en mí que es más que amor, despierta varias cosas la verdad",
+  "Pecas esta es otra para decirte que te amo mi niña linda",
+  "Siempre tengo que pensar bien mis palabras porque a veces eres medio criticona JAJAJ",
+  "No conocerte en persona y amar todo de ti me hace pensar que tú y yo vamos a encajar muy bien",
+  "Quiero verte con un peinado extravagante",
+  "Siento que bailas bien solo que eres tímida me gustaría bailar contigo salsa",
+  "Quiero verte en vestido, siento que te verías hermosa como en todo lo que usas",
+  "Quiero verte en mi cama conmigo",
+  "Hago ejercicio solo pensando que tú eres la dueña de todos los resultado de aquí en adelante",
+  "Trato de comprender como eres tan hermosa",
+  "No sé quién se dio el lujo de perderte pero debe estar arrepintiéndose desde hace mucho",
+  "te confieso que no soy bueno para una relación pero porque no sé qué hacer JAJAJA",
+  "Te quiero a ti en todo momento mi amor",
+  "Karenki karencilla karelato te quiero mucho y espero si llegas hasta acá sepas que en realidad no te quiero, te amo y te adoro",
+  "Tal vez algún día que hable con alguien que no seas tú siento que me va a caer un ladrillo en la cabeza",
+  "Me gustas así te hagas la 0 por la cabeza",
+  "Cabeza de manzana JAJAJA eso siempre me dio risa cuando me lo dijiste",
+  "Tal vez si eres un chihuahua con sombrero mexicano",
+  "No sé cómo le haces para ser tan hermosa mujer donde puedo poner un altar tuyo siempre me lo he preguntado",
+  "creo que estoy tan perdidamente enamorado que ya le dije a mi mamá que me voy para allá",
+  "Me gusta como analizas las cosas",
+  "Gracias por abrirte conmigo de cierto modo lo agradezco mucho",
+  "Las fotos que te mandé si son pensando en ti",
+  "Siempre estarás en este corazón de mango",
+  "No sé qué buscas pero espero cumplir los requisitos",
+  "Me encantan las ideas que me das para negocios o para problemas que tengo",
+  "me pareces una persona muy hermosa que da paz",
+  "Lamento haberte hecho enojar en algún momento",
+  "¿Has visto tu hermoso cuerpo? YO DIJE GRACIAS DIOS MÍO POR CREAR ESTA PIEZA DE ARTE QUE HICE PARA MERECER TANTO, MUCHAS GRACIAAAAAAAAAS",
+  "Quiero contar cada lunar que tienes en tu cuerpo",
+  "Pecas prometo comprarte un juguete un día de estos",
+  "Me gustaría que viniera a Colombia para mostrarte muchas cosas y que pruebes muchas cosas",
+  "Ya le hablé a mi mamá de ti, dijo que te quiere conocer",
+  "Creo que planear empezar de cero no es difícil si es por ti hermosa mujer de Dios",
+  "Necesito comprarme otros lentes para ver mejor esa belleza que tienes mi amor ¡Ave María! nunca había visto algo tan lindo mi vida",
+  "TUS OJOOOOOOOOOOOOOOOOOSSSSSSSSS DIOOOOOS",
+  "Recuerdas cuando hablábamos de cuando tuviéramos la casita y una niña pues si quiero todo eso",
+  "Te quiero veeeeeeeeeeeeeer yaaaaaaaaaaaaa",
+  "Intento entender todos los días la maravillosa mujer que eres",
+  "Una canción que suena en mi mente cuando hablo contigo es Fix you de coldplay no porque yo necesite arreglar algo de ti pero siento que nuestros problemas los podemos resolver juntos",
+  "Pecas cada 5 ideas te pienso osea como en promedio 2 días mi Pecas no sé cuándo acabe esto pero a ti también te quiero ver",
+  "Estoy nervioso quiero comprar los boletos pero no te he dicho",
+  "Quiero ver tu cara apenas me veas llegar al aeropuerto y esté contigo",
+  "Me gustó mucho saber de la Karen pequeña esa foto de bebé que me pasaste estaba muy hermosa y te agradezco por confiar en mí",
+  "Ojalá un año fuera más largo para hacer más larga esta lista",
+  "tal vez no te conozco desde hace más de un año pero lo único que sé es que tendría mil ideas para 8 de estas",
+  "Me encanta la paleta de colores que usas en tu ropa",
+  "Me gusta el brillo que trasmites a todo lado y creo que no soy el único que piensa eso",
+  "¿Si algún día nos divorciamos me dejarías la Xbox?",
+  "¿Te saco de trabajar y nos escapamos a Suiza a cultivar cebolla?",
+  "Me gusta la forma de tu carita cuando sonríes",
+  "Me gusta cuando existes",
+  "Me gusta cuando no haces nada cuando simplemente eres tú",
+  "tus fotos de Spotify me encantan en especial esa donde estás con una coronita de rosas o de flores",
+  "Le tengo celos a tus sábanas",
+  "Siento que los dos borrachos terminaremos en Tijuana",
+  "Sentí mucho amor cuando me llamaste en Navidad y hablamos de como nos gustamos",
+  "¿Has visto al colibrí cola de espátula? Es como tú, lo más hermoso de su especie",
+  "He escrito tanto que no sé si repetí cosas JAJAJA como te adoro niña hermosa",
+  "Espero encuentres en mí lo que yo encontré en ti",
+  "Si algún día nos alejamos prometo igual cuidarte desde lejos cualquier cosa que quieras pedirme se hará realidad",
+  "Voy a trabajar tanto hasta poder llevarte a la luna",
+  "Quiero ser un buen acompañante para tu vida",
+  "No sé qué depara el futuro pero si tu sonrisa y esos hermosos ojos están yo más que feliz",
+  "¿No quieres una tarde escuchando Los Tigres del Norte? JAJAJAJ",
+  "Me gusta mucho el marco de tus gafas",
+  "Me da mucha risa cuando te ríes por más de un minuto haces como un cerdito y es muy tierno JAJAJA como me encantas",
+  "Cuando sube el tono de la conversación tu voz se pone más suave como dato curioso",
+  "¿Sabías que los cisnes están hechos para toda la vida? así como quiero estar contigo creo que esto ya lo mencioné pero escribí tanto que lo vuelvo a repetir porque me encantas",
+  "La verdad no soy muy celoso pero hay algo que sí te doy por seguro yo no voy a dejar que te toquen ni un pelo",
+  "Te adoro",
+  "Si fueras un hamster yo creo que te me morirías a los 3 días",
+  "Akira necesitaba una mamá no sé solo digo",
+  "Me gusta tu forma de escribir las cosas eres muy calmada",
+  "sé que eres muy reservada con tus sentimientos y me gustaría algún día tener la confianza para que me los digas",
+  "Increíble lo hermosa que puede ser una mujer en persona",
+  "No sé cuándo subimos arriba del Parque Fundidora con esa luz la verdad te veías tan hermosa",
+  "lo que más me gustó de Monterrey fuiste tú",
+  "Noté algo en el viaje que tal vez tú y yo estamos más lejos de lo que creí pero me gustan los retos",
+  "Mujer eres muy hermosa en persona quedé con la boca abierta",
+  "Cuando salí a buscar esas flores en Monterrey me perdí JAJAJA ya me ubiqué después cuando intenté ir a tu casa",
+  "Vimos esa película juntos y me gustó mucho la de mi vecino gruñón",
+  "Pecas vuelvo a mencionarte pero conocerte en persona fue uno de las mejores experiencias en mi vida",
+  "Graciaaaaaaaaaaaaaaaaaaas por dejar ver ese hermoso rostro Dios mío",
+  "Me encanta como te vistes y verlo en directo fue de lo mejor",
+  "Ese jugo de sandía estaba muy rico y más porque estaba al lado tuyo tomándolo",
+  "Esa carta que te di espero te guste tal vez no es lo que querías pero es una muestra de mi corazón gracias por recibirla hermosa",
+  "Gracias por mostrarme Monterrey eterno agradecimiento a esta hermosa mujer",
+  "He pensado mucho en el avión y me encantó la experiencia pero noté algunas cosas que tal vez tú no sabes todavía",
+  "Me encantó la cafetería a la que me llevaste gracias por tener tan buen gusto",
+  "Tu casa es muy bonita ya no más me imagino cuando estabas hablando conmigo y en la cocina jajaja",
+  "verte en pijama es uno de los recuerdos que voy a mantener en mi cerebro toda la vida",
+  "No sabía que te gustaba el vape fue la primera vez también que lo intenté es bueno conocer nuevas experiencias",
+  "¿Si yo fuera un frijol me querrías?",
+  "Esa caja sorpresa creo que no te gustó jaja ese muñeco se me hizo muy chistoso",
+  "Me gustan mucho las montañas de Monterrey se ven bonitas pero no tanto como tú",
+  "Ya averigüé que tengo que hacer para irme a vivir allá prepárate",
+  "Me gusta el brillo de tus ojos en la noche",
+  "Me gusta como te ves con el viento en la cara",
+  "Me gustan los gestos que haces para las fotos",
+  "Me gusta como te vistes",
+  "me gusta como caminas",
+  "me gusta como te ves",
+  "me gusta y me gusta mucho la persona que eres",
+  "ese pollo que pedimos estaba muy rico gracias por compartir conmigo",
+  "Siempre vas a contar conmigo mi amor bello estás muy linda",
+  "No conocí a tus amigos pero espero algún día poder conocer a las personas que siempre están contigo",
+  "Espero encuentres el trabajo que quieres linda solo te deseo lo mejor siempre",
+  "Uy no sé lo único que no me gustó es que no te quedaste conmigo",
+  "La señal me traicionó en Monterrey JAJAJ casi no te puedo contactar",
+  "Me hiciste probar muchas cosas y eso me gustó muchas gracias",
+  "Me gustan tus bolsos están bonitos",
+  "Me gusta que no me querías dejar pagar nada jajaja",
+  "Es la primera vez que pruebo algo de Starbucks la verdad estaba muy rico lo repetiría pero solo contigo",
+  "Gracias de corazón por todo",
+  "Me hubiera jugado una partida en tu xbox para ver como me iba jajaja",
+  "gracias por coincidir conmigo mujer siempre te voy a adorar",
+  "Si llegaste hasta esta parte de la lista que sepas que te quiero mucho y siempre te llevaré en mi corazón de mango",
+  "No sabía que en este planeta podía existir alguien tan completo como persona y eso eres tú",
+  "Tenías razón la Pecas es muy bonita ya no me acuerdo del nombre del otro perrito pero también estaba muy lindo perdóname pero no me acuerdo jajaja",
+  "Espero te hayan gustado las flores me perdí buscándolas y creo que me iban a asaltar JAJAJAJA",
+  "Monterrey es muy lindo no sé cómo me lo voy a aprender pero por ti me hago un mapa en el pecho",
+  "Quiero tatuarme tu nombre",
+  "Me gusta la manera en la que hablas o te sientas en cualquier lugar",
+  "Perdóname por hacerte sentar en el piso para cargar mi cel JAJAJAJA",
+  "Desde que llegué a Bogotá me siento muy raro pero pronto lo descubriremosssss",
+  "Me gustó el parque Fundidora y más las fotos que te tomé",
+  "Siempre voy a guardar esas fotitos que nos tomamos",
+  "Los llaveros que hice de ti los quiero llevar por todos lados cuánto te adoro mujer",
+  "He escrito tantas cosas a lo largo de los meses que siento que no he dicho todo lo que quería jajaja",
+  "Te adoro niña hermosa ojalá si pudiéramos conocernos bien",
+  "¿Puedo volver a robarte?",
+  "No pude conocerte a fondo pero va a haber otra oportunidddddaaaaaaad de conocer todo lo que eres tú",
+  "Me gustan mucho tus historias",
+  "Recuerdo cuando me mostraste tu foto de cabello rojo jajaja te veías preciosisima",
+  "Son días pesados pero pensando en ti se me va cualquier mal sabor",
+  "Mujer quiero pedirte matrimonio",
+  "No he saboreado tus labios pero cuando haga no quiero parar de hacerlo",
+  "Me encantas",
+  "Esta no la había escrito JAJAJA sabes a pesar de todo sí me encantabas niña preciosa no sabes cuánto quería una familia contigo cuídate mucho ojos bellos me los tatuaría si pudiera",
 ];
 
 // Add your MP3 files here (place them in the same folder as razones.html)
 const SONGS = [
-  // { title: 'Nombre canción', artist: 'Artista', src: 'cancion.mp3' },
+  { title: 'Going Home', artist: 'Bleach OST', src: 'going-home.mp3' },
 ];
 
 const LIFE_EVENTS = [
-  { date: 'Cuando nos conocimos', title: 'El principio', text: 'Cuéntalo aquí...', img: null },
-  { date: 'Primera cita', title: 'La primera vez', text: 'Cuéntalo aquí...', img: null },
-  { date: 'Primer "te amo"', title: 'Tres palabras', text: 'Cuéntalo aquí...', img: null },
+  {
+    date: 'A Pecas',
+    title: 'Pecas',
+    text: 'Pecas a ti también te agradezco por existir y acompañar a esta hermosa mujer que día a día se esfuerza porque tú también estés bien le agradezco al cielo haberla podido conocerlas a las dos siempre las voy a llevar en mi corazón además de que eres una perrita muy linda no sabes cuánto te quiero Pecas me encantan las caritas que haces cuando te molesta esta mujer',
+    img: 'linea/pecas.jpg',
+  },
+  {
+    date: 'A ti',
+    title: 'Gracias',
+    text: 'Te agradezco porque contigo me di cuenta de que puedo ser quien soy realmente y siempre te lo voy a agradecer por darme la libertad de hablar contigo de cualquier cosa no sabes el aprecio que te tengo y además de eso me encanta la persona que eres siempre pero SIEMPRE que necesites algo puedes contar conmigo eres de las únicas personas por las que daría mi vida no sabes en serio cuánto TE ADORO',
+    img: 'linea/gracias.jpg',
+  },
+  {
+    date: 'La distancia',
+    title: 'Voy a luchar por ti',
+    text: 'Puede que estemos lejos pero créeme que el tiempo que pasamos hablando lo valoro mucho tal vez tú y yo estaríamos mejor cerca pero te juro que yo voy a resolver ese tema de la distancia así tenga que acabar con el mundo por ti te juro luchar por ti y por todo lo que quieras porque de cierto modo tus sueños son mis sueños y juntos podemos hacer un equipo para hacer de todo.',
+    img: 'linea/anime.jpg',
+  },
 ];
 
 const LETTERS = [
   {
-    title: 'Una carta para ti',
-    date: 'Este año',
-    content: 'Querida/o...\n\nEscribe aquí tu primera carta completa.\n\nCon todo mi amor,',
-    sig: 'Tu persona favorita',
+    title: 'Para cuando te sientas sola',
+    date: 'Carta 1',
+    content: 'Karen no sé cómo expresar el amor que te tengo solo quiero decirte que no hay problema si algún día te sientes sola recuerda que yo voy a estar ahí para ti SIEMPRE, no importa el problema o la distancia que nos separe siempre que necesites algo puedes contar conmigo y necesito que entiendas que nada es muy grande o caro comparado a lo que siento por ti entonces nunca te presiones por algo porque siempre siempre vas a contar conmigo y por eso me esfuerzo por mejorar mi vida para ti y para tratar de ser mejor persona y que los dos podamos construir algo',
+    sig: 'Siempre tuyo, Andrés',
   },
   {
-    title: 'Para cuando estés lejos',
-    date: 'Siempre',
-    content: 'Querida/o...\n\nEscribe aquí tu segunda carta.\n\nTe quiero,',
-    sig: 'Yo',
+    title: 'Para cuando no esté',
+    date: 'Carta 2',
+    content: 'Karen lamentablemente en este mundo nadie es eterno y yo no soy la excepción solo quiero decirte que a pesar de las adversidades o cualquier cosa que llegué a pasar entre tú y yo siempre te voy a llevar en mi corazón de mango como dices tú, tú eres lo que algún día soñé y con lo que anhelo todos los días, tal vez somos muy jóvenes, tal vez no soy lo que vas a querer algún día pero te prometo que mientras yo esté presente trataré de darte los mejores días de tu vida y trataré de que entiendas también que cuando yo ya no esté de igual manera voy a seguir presente para ti.',
+    sig: 'Con todo mi amor, Andrés',
+  },
+  {
+    title: 'Para tu vida',
+    date: 'Carta 3',
+    content: 'Desde que te conozco he pensado que eres un poco dormilona jajaja, pero sé que te ves hermosa durmiendo o haciendo cualquier cosa que hagas en tu diario vivir el punto es Karen nunca pares lo que estás haciendo aunque pienses que lo estás haciendo mal te llevo conociendo desde agosto del 2025 y lo único que he visto de ti es una mujer muy fuerte que si se lo propone lo puede hacer, halago la capacidad que tienes para alegrar los lugares con tu presencia y me parece que vas a tener todo lo que quieras en tu vida tal vez no de la forma que quieres pero créeme que sé que vas a conseguir la felicidad que todos anhelan o quieren porque no necesito años conociéndote para saber la calidad de mujer que eres y lo único que te puedo decir es que eres EXCEPCIONAL Y ÚNICA.',
+    sig: 'Con admiración, Andrés',
   },
 ];
 
@@ -61,29 +432,29 @@ const CAPSULES = [
 
 const DEDICATORIAS_DATA = [
   {
-    for: 'Para ti, siempre',
-    title: 'Escribe aquí el título',
-    body: 'Escribe aquí tus palabras. Pueden ser un recuerdo especial, una promesa, o simplemente lo que sientes en este momento. No tiene que ser perfecto; solo tiene que ser tuyo.',
+    for: 'Dedicatoria 1',
+    title: 'Siempre',
+    body: 'Perdona si en esta página le dediqué mucho espacio a tus ojos la verdad es que me encantan no sabes cuánto, siempre pienso en ti desde que abro mis ojos hasta incluso con los cierro no hay momento que no pases por mi cabeza pienso siempre mucho en ti y en cómo puedo hacer todo para reunirme contigo y tener algo en el mismo lugar hasta el momento no sé si estás dispuesta lo único que sé es que yo sí quiero todo contigo no me importa sacrificar todo por ti la verdad la idea de estar cerca tuyo siempre la voy a llevar en mi mente hasta que la pueda cumplir y recuerda que siempre te voy a adorar es una de las palabras que nunca le digo a nadie solo a ti porque para mí SIEMPRE vas a ser especial en mi corazón y mi mente no importan los años o el tiempo que pase probablemente en otra vida seamos dos perros con sombrero de sandía pero juntos.',
     sig: 'Con todo mi amor',
   },
   {
-    for: 'Para el día en que lo necesites',
-    title: 'Escribe aquí el título',
-    body: 'Un mensaje para cuando esté triste, para cuando lo olvide, para cuando lo necesite leer. Algo que venga del corazón y llegue directo al suyo.',
-    sig: 'Tuyo/a para siempre',
+    for: 'Dedicatoria 2',
+    title: 'Pecas',
+    body: 'Pecas mi amor tengo muchas fotos tuyas y sabes mi foto favorita siempre va a ser cuando estás sentada toda chiquita y panzona con tu chaleco rojo jajaja te ves muy bonita Pecas y te confieso que un día que me sentía mal vi esa foto y me alegró el día estas palabras van hacia ti porque puede que yo no comparta físicamente contigo pero también agradezco al universo por haberte puesto en mi camino y no tengo nada más por decir solo agradecerte por acompañar a Karenki en su camino y que tú también estés y te vaya muy bien cuídate mucho mi Pecas te amo',
+    sig: 'Te amo, Pecas',
   },
   {
-    for: 'Para el futuro',
-    title: 'Escribe aquí el título',
-    body: 'Una visión de lo que quieres que sea, de cómo te imaginas juntos más adelante. Un sueño escrito con letra pequeña pero corazón grande.',
-    sig: 'Con esperanza',
+    for: 'Dedicatoria 3',
+    title: 'El tiempo',
+    body: 'Para mí cada segundo hablando o haciendo cualquier cosa contigo se me hace eterno y eso me encanta porque mi concepto del tiempo contigo es relativo no necesito poner límites o algo parecido me encanta hablar o hacer cualquier cosa contigo me encantas mujer y puede que mi amor supere los cimientos de cualquier barrera por ti, no sé qué vaya a pasar a futuro porque no sé qué hay en tu cabeza pero te agradezco todo el tiempo que me brindaste o el que me brindaras realmente te doy muchas gracias por ser tan hermosa y buena y sé que el tiempo favorece a las personas buenas como tú y espero todo te salga bien no sabes cuánto te adoro y anhelo muchas cosas a tu lado.',
+    sig: 'Siempre tuyo',
   },
 ];
 
 const LAST_WORDS = {
   title: 'Y si me faltaran las palabras…',
-  body: 'Escribe aquí tu mensaje de cierre. La que resuma todo lo que quisiste decir a lo largo de estas 365 razones. El punto final que en realidad es un comienzo.',
-  firma: 'Tu nombre aquí',
+  body: 'Esto no lo había escrito tampoco JAJAJA, después de todo solo tengo que agradecerte todo bella mujer no tengo ni una pizca de resentimiento u odio hacia ti al contrario esta es una página para que sepas el cariño tan inmenso que se puede tener hacia ti y no solo yo, esto es un recordatorio para que veas que las personas se pueden esforzar muchísimo por ti amor mío no eres una persona que merece lo mínimo tú mereces cada esfuerzo cada gota de sudor y todos los pensamientos lindos que salgan de la mente de alguien mereces eso y más.\n\nMereces ser amada con la mayor intensidad de este planeta tal vez como quise hacerlo yo pero no hay lamentos solo quiero que sepas el cariño que te tenía y que de ahora en adelante vas a ser un recuerdo que voy a llevar en mi corazón mi niña linda, he de recalcar que no importa la distancia o que ya no hablemos o cualquier cosa que pase en este planeta siempre vas a contar conmigo para lo que necesites y recuerda que en Colombia siempre que necesites algo siempre voy a estar para ti, cuídate Karen que tu vida sea bella y próspera, que cumplas todas las metas que me contaste algún día hermosa y en serio cuida a la Pecas si le pasa algo yo mismo te doy un sape.',
+  firma: 'Con muchísimo amor, Andrés Caballero',
 };
 
 /* ══════════════════════════════════════════════
@@ -146,6 +517,8 @@ function saveState() {
 
 // ── Helpers ─────────────────────────────────────
 function reason(i) { return REASONS[i % REASONS.length]; }
+
+function imageForDay(n) { return 'img/dia-' + String(n).padStart(3, '0') + '.jpg'; }
 
 function todayStr() {
   const d = new Date();
@@ -477,14 +850,16 @@ function showModal(i) {
   const overlay = document.getElementById('modal-overlay');
   const counter = document.getElementById('modal-counter');
   const numEl   = document.getElementById('modal-num');
-  const reasonEl = document.getElementById('modal-reason');
-  const imgSlot  = document.getElementById('img-slot-active');
-  const favBtn   = document.getElementById('fav-btn');
+  const reasonEl  = document.getElementById('modal-reason');
+  const modalImg  = document.getElementById('modal-img');
+  const modalImgBg = document.getElementById('modal-img-bg');
+  const favBtn    = document.getElementById('fav-btn');
 
   if (counter)  counter.textContent = 'Razón ' + n + ' de 365';
   if (numEl)    numEl.textContent   = String(n).padStart(3,'0');
   if (reasonEl) typeText(reasonEl, reason(i), 22);
-  if (imgSlot)  imgSlot.id = 'razon-' + n;
+  if (modalImg)   modalImg.src   = imageForDay(n);
+  if (modalImgBg) modalImgBg.src = imageForDay(n);
 
   if (favBtn) {
     if (STATE.favorites.has(n)) {
@@ -775,7 +1150,7 @@ function initIntersection() {
     });
   }, { threshold: 0.12 });
 
-  document.querySelectorAll('.ded-card, .stat-card, .life-item, .letter-env, .capsule-card').forEach(function(el, i) {
+  document.querySelectorAll('.ded-card, .life-item, .letter-env').forEach(function(el, i) {
     el.style.setProperty('--si', i);
     io.observe(el);
   });
@@ -957,6 +1332,14 @@ function initMusicPlayer() {
   }
 
   loadSong(idx);
+
+  // Browsers block silent autoplay on load, so start on the very first
+  // interaction anywhere on the page — feels instant without violating policy.
+  const startOnFirstInteraction = function() {
+    if (!STATE.music.playing) play();
+  };
+  document.addEventListener('pointerdown', startOnFirstInteraction, { once: true });
+  document.addEventListener('keydown', startOnFirstInteraction, { once: true });
 
   if (toggle) toggle.addEventListener('click', function() {
     if (panel) panel.classList.toggle('is-open');
@@ -1160,7 +1543,6 @@ function initExportImport() {
         updateProgress();
         buildGrid();
         renderFavGrid();
-        renderTimeline();
         showToast('Progreso importado correctamente');
       } catch(ex) {
         showToast('Error al importar el archivo');
@@ -1263,19 +1645,15 @@ document.addEventListener('DOMContentLoaded', function() {
   renderDedicatorias();
   renderLastWords();
   renderLetters();
-  renderCapsules();
   renderLifeLine();
-  renderTimeline();
   updateProgress();
   buildGrid();
   renderFavGrid();
-  renderStats();
 
   initMusicPlayer();
   initSettings();
   initFilterTabs();
   initSearch();
-  initGallery();
   initExportImport();
   initEasterEggs();
 

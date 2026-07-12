@@ -45,41 +45,6 @@
   </div>
 </div>
 
-<!-- Settings -->
-<button id="settings-btn" class="settings-btn" title="Ajustes">⚙</button>
-<div id="settings-panel" class="settings-panel">
-  <div class="settings-title">Ajustes</div>
-  <div class="settings-row">
-    <span class="settings-label">Tema</span>
-    <button id="theme-toggle" class="settings-chip">🌙 Oscuro</button>
-  </div>
-  <div class="settings-row">
-    <span class="settings-label">Fuente</span>
-    <div class="settings-chips">
-      <button class="settings-chip font-chip" data-font="small">A-</button>
-      <button class="settings-chip font-chip is-active" data-font="medium">A</button>
-      <button class="settings-chip font-chip" data-font="large">A+</button>
-    </div>
-  </div>
-  <div class="settings-row">
-    <span class="settings-label">Modo</span>
-    <div class="settings-chips">
-      <button class="settings-chip mode-chip is-active" data-mode="free">Libre</button>
-      <button class="settings-chip mode-chip" data-mode="calendar">Calendario</button>
-    </div>
-  </div>
-  <div class="settings-row">
-    <span class="settings-label">Ambiente</span>
-    <select id="ambient-select" class="settings-select">
-      <option value="">Sin sonido</option>
-      <option value="rain">Lluvia</option>
-      <option value="forest">Bosque</option>
-      <option value="cafe">Café</option>
-      <option value="sea">Mar</option>
-    </select>
-  </div>
-</div>
-
 <!-- Search Overlay -->
 <div id="search-overlay" class="search-overlay">
   <div class="search-box">
@@ -102,9 +67,6 @@
   <nav class="prog-nav">
     <a href="#inicio">Inicio</a>
     <a href="#cuadricula">Razones</a>
-    <a href="#favoritos">Favoritas</a>
-    <a href="#estadisticas">Stats</a>
-    <a href="#galeria">Galería</a>
     <a href="#cartas">Cartas</a>
     <a href="#dedicatorias">Dedicatorias</a>
   </nav>
@@ -116,9 +78,9 @@
     <div class="hero-eyebrow">Para ti ♥</div>
     <h1 class="hero-title">
       <span class="hero-word w1">365</span>
-      <span class="hero-word w2">razones</span>
-      <span class="hero-word w3 accent">por las</span>
-      <span class="hero-word w4 accent">que te amo</span>
+      <span class="hero-word w2">cosas</span>
+      <span class="hero-word w3 accent">que quiero hacer contigo</span>
+      <span class="hero-word w4 accent">o por las que te amo</span>
     </h1>
     <p class="hero-sub" id="hero-sub"></p>
   </div>
@@ -139,86 +101,11 @@
       <button class="filter-tab is-active" data-filter="all">Todas</button>
       <button class="filter-tab" data-filter="opened">Abiertas</button>
       <button class="filter-tab" data-filter="locked">Por abrir</button>
-      <button class="filter-tab" data-filter="favorites">Favoritas</button>
     </div>
   </div>
   <div id="grid" class="grid"></div>
 </section>
 
-<!-- Favorites -->
-<section id="favoritos" class="fav-section">
-  <div class="section-head">
-    <div class="section-eyebrow">Guardadas con amor</div>
-    <h2 class="section-title">Tus favoritas</h2>
-  </div>
-  <div id="fav-grid" class="grid fav-grid"></div>
-  <p id="fav-empty" class="fav-empty">Aún no has marcado ninguna como favorita. Abre una razón y toca el ♥.</p>
-</section>
-
-<!-- Estadísticas -->
-<section id="estadisticas" class="stats-section">
-  <div class="section-head">
-    <div class="section-eyebrow">Tu camino</div>
-    <h2 class="section-title">Estadísticas</h2>
-  </div>
-  <div class="stats-grid">
-    <div class="stat-card">
-      <div id="stat-opened" class="stat-value">0</div>
-      <div class="stat-label">Abiertas</div>
-    </div>
-    <div class="stat-card">
-      <div id="stat-pct" class="stat-value">0%</div>
-      <div class="stat-label">Completado</div>
-    </div>
-    <div class="stat-card">
-      <div id="stat-days" class="stat-value">—</div>
-      <div class="stat-label">Días explorando</div>
-    </div>
-    <div class="stat-card">
-      <div id="stat-favs" class="stat-value">0</div>
-      <div class="stat-label">Favoritas</div>
-    </div>
-    <div class="stat-card">
-      <div id="stat-last" class="stat-value">—</div>
-      <div class="stat-label">Última abierta</div>
-    </div>
-  </div>
-</section>
-
-<!-- Timeline -->
-<section id="timeline-hist" class="timeline-section">
-  <div class="section-head">
-    <div class="section-eyebrow">Historial</div>
-    <h2 class="section-title">Tu línea del tiempo</h2>
-  </div>
-  <div id="timeline-list" class="timeline-list"></div>
-</section>
-
-<!-- Galería -->
-<section id="galeria" class="gallery-section">
-  <div class="section-head">
-    <div class="section-eyebrow">Momentos</div>
-    <h2 class="section-title">Nuestra galería</h2>
-  </div>
-  <div class="gallery-grid">
-    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
-    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
-    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
-    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
-    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
-    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
-    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
-    <figure class="gal-item gal-placeholder"><div class="gal-inner">📷</div></figure>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox" style="display:none">
-  <button id="lb-close" class="lb-close">✕</button>
-  <button id="lb-prev" class="lb-prev">‹</button>
-  <img id="lb-img" class="lb-img" alt="">
-  <button id="lb-next" class="lb-next">›</button>
-</div>
 
 <!-- Línea de vida -->
 <section id="linea-vida" class="life-section">
@@ -248,15 +135,6 @@
     <div id="letter-sig" class="letter-sig"></div>
   </div>
 </div>
-
-<!-- Cápsulas -->
-<section id="capsula" class="capsules-section">
-  <div class="section-head">
-    <div class="section-eyebrow">En el tiempo</div>
-    <h2 class="section-title">Cápsulas del tiempo</h2>
-  </div>
-  <div id="capsules-grid" class="capsules-grid"></div>
-</section>
 
 <!-- Dedicatorias -->
 <section id="dedicatorias" class="ded-section">
@@ -309,19 +187,15 @@
     <div class="modal-counter" id="modal-counter">Razón 1 de 365</div>
     <div class="modal-body">
       <div class="modal-img-col">
-        <image-slot
-          id="img-slot-active"
-          shape="rounded"
-          radius="18"
-          placeholder="Arrastra una foto aquí"
-          style="display:block;width:100%;aspect-ratio:4/5;">
-        </image-slot>
+        <div class="modal-img-frame">
+          <img id="modal-img-bg" class="modal-img-bg" alt="" src="">
+          <img id="modal-img" class="modal-img" alt="" src="">
+        </div>
       </div>
       <div class="modal-txt-col">
         <div class="modal-label">Razón</div>
         <div class="modal-num" id="modal-num">001</div>
         <p class="modal-reason" id="modal-reason"></p>
-        <button id="fav-btn" class="fav-btn" title="Guardar como favorita">♥ Favorita</button>
         <div class="modal-nav">
           <button class="btn-nav btn-prev" id="btn-prev">← Anterior</button>
           <button class="btn-nav btn-next" id="btn-next">Siguiente →</button>
@@ -342,7 +216,6 @@
 
 <input id="import-input" type="file" accept=".json" style="display:none">
 
-<script src="image-slot.js"></script>
 <script src="razones.js"></script>
 </body>
 </html>
